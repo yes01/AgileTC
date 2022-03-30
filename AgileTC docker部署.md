@@ -40,18 +40,18 @@ services:
     command: bash -c "cd /app/ && java -jar case-server-1.0-SNAPSHOT.jar"
     # docker 端口映射,如果宿主机 8080 端口被占用需要更改
     ports:
-      - "8080:8094"
+      - "8081:8094"
     depends_on:
       - mysql
     restart: always
     networks:
       - agile-net
   mysql:
-    image: mysql:latest
+    image: amd64/mysql
     container_name: agileTC-mysql
     # 挂载到宿主机目录 /data/mysql/data 
     volumes:
-      - /data/mysql/data:/var/lib/mysql
+      - /Users/lixiang/Downloads/env_config/mysql/data:/var/lib/mysql
     env_file:
       - ./agile.env
     # docker 端口映射,如果宿主机 6666 端口被占用需要更改

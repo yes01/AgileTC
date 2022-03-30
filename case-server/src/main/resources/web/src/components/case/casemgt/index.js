@@ -54,7 +54,7 @@ export default class CaseMgt extends React.Component {
   ///case/getRequirement
   handleAutoSave = (e) => {
     e.preventDefault();
-    e.returnValue = '内容会被存储到浏览器缓存中！';
+    e.returnValue = '內容會被存儲到瀏覽器緩存中！';
     localStorage.setItem(window.location.href, JSON.stringify(this.editorNode.getAllData()));
     const { iscore } = this.props.match.params;
     const minderData = this.editorNode
@@ -67,7 +67,7 @@ export default class CaseMgt extends React.Component {
     if (Number(iscore) !== 2 && minderData && !hasBreak) {
       // 非冒烟case才可保存
       if (Number(minderData.base) > 1) {
-        message.warn('即将离开页面，自动保存当前用例。');
+        message.warn('即將離開頁面，自動保存當前用例。');
         this.updateCase();
       }
     }
@@ -130,7 +130,7 @@ export default class CaseMgt extends React.Component {
 
     const param = {
       id: this.props.match.params.caseId,
-      title: '更新内容，实际不会保存title',
+      title: '更新內容，實際不會保存title',
       recordId,
       modifier: getCookies('username'),
       caseContent: JSON.stringify(this.editorNode.getAllData()),
@@ -138,7 +138,7 @@ export default class CaseMgt extends React.Component {
     let url = `${this.props.doneApiPrefix}/case/update`;
     request(url, { method: 'POST', body: param }).then(res => {
       if (res.code == 200) {
-        message.success('保存内容成功');
+        message.success('保存內容成功');
       } else {
         message.error(res.msg);
       }
@@ -155,7 +155,7 @@ export default class CaseMgt extends React.Component {
     let url = `${this.props.doneApiPrefix}/record/clear`;
     request(url, { method: 'POST', body: params }).then(res => {
       if (res.code == 200) {
-        message.success('清除执行记录成功');
+        message.success('清除執行記錄成功');
         this.editorNode.setEditerData(JSON.parse(res.data.caseContent));
       } else {
         message.error(res.msg);
@@ -186,11 +186,11 @@ export default class CaseMgt extends React.Component {
         <Breadcrumb style={{ marginBottom: 8, fontSize: 12 }}>
           <Breadcrumb.Item>
             <Link to="/case/caseList/1">
-              {casedetail ? '用例' : '任务'}管理
+              {casedetail ? '用例' : '任務'}管理
             </Link>
           </Breadcrumb.Item>
           <Breadcrumb.Item>
-            {casedetail ? '用例' : '任务'}详情：
+            {casedetail ? '用例' : '任務'}詳情：
             {recordDetail ? recordDetail.title : ''}
             {casedetail ? casedetail.title : ''}
           </Breadcrumb.Item>
@@ -228,7 +228,7 @@ export default class CaseMgt extends React.Component {
                 <div>
                   {(
                     <Tooltip
-                      title={`通过:${recordDetail.successCount} (${(
+                      title={`通過:${recordDetail.successCount} (${(
                         (recordDetail.successCount / recordDetail.totalCount) *
                         100
                       ).toFixed(2)}%)`}
@@ -271,7 +271,7 @@ export default class CaseMgt extends React.Component {
                     null}
                   {(recordDetail.bugNum > 0 && (
                     <Tooltip
-                      title={`失败:${recordDetail.bugNum} (${(
+                      title={`失敗:${recordDetail.bugNum} (${(
                         (recordDetail.bugNum / recordDetail.totalCount) *
                         100
                       ).toFixed(2)}%)`}
@@ -292,7 +292,7 @@ export default class CaseMgt extends React.Component {
                     null}
                   {(recordDetail.totalCount - recordDetail.passCount > 0 && (
                     <Tooltip
-                      title={`未执行:${recordDetail.totalCount -
+                      title={`未執行:${recordDetail.totalCount -
                         recordDetail.passCount} (${(
                         ((recordDetail.totalCount - recordDetail.passCount) /
                           recordDetail.totalCount) *
@@ -367,13 +367,13 @@ export default class CaseMgt extends React.Component {
             <span> &nbsp; &nbsp;</span>
             {iscore == 3 && (
               <Button type="primary" onClick={this.clearRecord}>
-                清除执行记录
+                清除執行記錄
               </Button>
             )}
           </div>
           <AgileTCEditor
             ref={editorNode => (this.editorNode = editorNode)}
-            tags={['前置条件', '执行步骤', '预期结果']}
+            tags={['前置條件', '執行步驟', '預期結果']}
             progressShow={progressShow}
             readOnly={readOnly}
             mediaShow={!progressShow}

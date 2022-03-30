@@ -45,7 +45,7 @@ class LogIn extends React.PureComponent {
         }).then(res => {
           if (res && res.code === 200) {
             message.success('注册成功')
-            window.location.href = utils.getQueryString('jumpto') 
+            window.location.href = utils.getQueryString('jumpto')
           } else {
             message.error(res.msg)
           }
@@ -62,46 +62,46 @@ class LogIn extends React.PureComponent {
       <div className="login">
         <div className="card">
           <div className="title">
-            AgileTC<span>一套敏捷的测试用例管理平台</span>
+            Zeek<span>一套敏捷的測試用例管理平台</span>
           </div>
           <span
             className={type === '1' ? 'btn btn_active' : 'btn'}
             onClick={() => this.typeChange('1')}
           >
-            登录
+            登錄
           </span>
           <span
             className={type === '2' ? 'btn btn_active' : 'btn'}
             onClick={() => this.typeChange('2')}
           >
-            注册
+            註冊
           </span>
           <div className="input">
             <Form.Item label="">
               {getFieldDecorator('username', {
-                rules: [{ required: true, message: '请填写账号' }],
+                rules: [{ required: true, message: '請填寫賬號' }],
                 initialValue: undefined,
-              })(<Input placeholder="账号" prefix={<Icon type="user" />} />)}
+              })(<Input placeholder="賬號" prefix={<Icon type="user" />} />)}
             </Form.Item>
             {type === '1' && (
               <Form.Item label="">
                 {getFieldDecorator('password', {
-                  rules: [{ required: true, message: '请填写密码' }],
+                  rules: [{ required: true, message: '請填寫密碼' }],
                   initialValue: undefined,
-                })(<Input.Password placeholder="密码" prefix={<Icon type="lock" />} />)}
+                })(<Input.Password placeholder="密碼" prefix={<Icon type="lock" />} />)}
               </Form.Item>
             )}
             {type === '2' && (
               <Form.Item label="">
                 {getFieldDecorator('password', {
-                  rules: [{ required: true, message: '请填写密码' }],
+                  rules: [{ required: true, message: '請填寫密碼' }],
                   initialValue: undefined,
-                })(<Input.Password placeholder="密码" prefix={<Icon type="lock" />} />)}
+                })(<Input.Password placeholder="密碼" prefix={<Icon type="lock" />} />)}
               </Form.Item>
             )}
           </div>
           <Button type="primary" className="onBtn" loading={loading} onClick={() => this.onOk()}>
-            {type === '1' ? '登录' : '注册并登录'}
+            {type === '1' ? '登錄' : '註冊並登錄'}
           </Button>
         </div>
       </div>

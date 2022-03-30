@@ -40,7 +40,7 @@ class Headers extends React.Component {
     return getCookies('username') ? (
       <Header style={{ zIndex: 9 }}>
         <a href="/" style={{ color: '#fff', fontSize: 24 }}>
-          AgileTC
+          Zeek
         </a>
         {getCookies('username') ? (
           <Dropdown overlay={menu} overlayClassName="dropStyle" placement="bottomLeft">
@@ -52,7 +52,7 @@ class Headers extends React.Component {
           </Dropdown>
         ) : (
           <a href="/login" className="loginCss">
-            登录/注册
+            登錄/註冊
           </a>
         )}
       </Header>

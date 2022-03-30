@@ -150,7 +150,7 @@ export default {
         antd: true,
         dva: true,
         dynamicImport: { webpackChunkName: true },
-        title: 'agiletc-web',
+        title: 'zeek-web',
         dll: true,
         routes: {
           exclude: [

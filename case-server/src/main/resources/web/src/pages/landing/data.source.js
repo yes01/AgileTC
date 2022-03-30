@@ -14,7 +14,7 @@ export const Banner30DataSource = {
           <div>
             <img src={logoImg} className="banner3-logo" />
             <br />
-            <span>AgileTC</span>
+            <span>Zeek</span>
           </div>
         ),
       },
@@ -23,7 +23,7 @@ export const Banner30DataSource = {
         className: 'banner3-name',
         children: (
           <span>
-            <p>一套敏捷的测试用例管理平台</p>
+            <p>一套敏捷的測試用例管理平台</p>
           </span>
         ),
       },
@@ -32,9 +32,9 @@ export const Banner30DataSource = {
         className: 'banner3-name-en',
         children: (
           <span style={{ color: '#7d899b' }}>
-            以脑图方式编辑可快速上手，用例关联需求形成流程闭环，并支持组件化引用，
+            以腦圖方式編輯可快速上手，用例關聯需求形成流程閉環，並支持組件化引用，
             <br />
-            可在各个平台嵌入使用，是测试人员的贴心助手
+            可在各個平台嵌入使用，是測試人員的貼心助手
           </span>
         ),
       },
@@ -43,7 +43,7 @@ export const Banner30DataSource = {
         className: 'banner3-button',
         children: (
           <span>
-            <p>开始使用</p>
+            <p>開始使用</p>
           </span>
         ),
         href: getCookies('username') ? '/case/caseList/1' : `/login?/case/caseList/1`,
@@ -59,7 +59,7 @@ export const Footer00DataSource = {
     children: (
       <span>
         <p>
-          <span>©2020 AgileTC</span>
+          <span>©2022 Zeek</span>
         </p>
       </span>
     ),
